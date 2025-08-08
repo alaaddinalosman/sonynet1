@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>الصيانة والدعم - شركة سوني</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: #f4f7f9;
+      color: #222;
+      direction: rtl;
+      scroll-behavior: smooth;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: #002d5f;
+      color: #fff;
+      padding: 1rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
+      z-index: 1000;
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 1.9rem;
+      letter-spacing: 2px;
+      margin: 0;
+      cursor: pointer;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 2rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #f8c444;
+      transition: width 0.3s ease;
+    }
+    nav a:hover {
+      color: #f8c444;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    main {
+      max-width: 980px;
+      margin: 3rem auto 5rem auto;
+      padding: 0 2rem;
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #002d5f;
+      margin-bottom: 1.1rem;
+    }
+    p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #444;
+      margin-bottom: 1.5rem;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    ul {
+      list-style-type: square;
+      padding-right: 1.6rem;
+      color: #555;
+      font-size: 1.1rem;
+    }
+    ul li {
+      margin-bottom: 0.85rem;
+    }
+    .contact-info {
+      background: #e6f0ff;
+      border: 2px solid #002d5f;
+      padding: 1.8rem;
+      border-radius: 12px;
+      font-size: 1.1rem;
+      color: #002d5f;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .btn-contact {
+      display: inline-block;
+      background-color: #002d5f;
+      color: #fff;
+      padding: 0.75rem 1.7rem;
+      font-weight: 700;
+      font-size: 1.15rem;
+      border-radius: 30px;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 2rem;
+      transition: background-color 0.3s ease;
+      user-select: none;
+    }
+    .btn-contact:hover {
+      background-color: #001b3a;
+    }
+    footer {
+      background: #002d5f;
+      color: white;
+      text-align: center;
+      padding: 1.7rem;
+      font-size: 1rem;
+      letter-spacing: 1.6px;
+      user-select: none;
+      margin-top: 3rem;
+    }
+    @media (max-width: 700px) {
+      header {
+        padding: 1rem 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      nav a {
+        margin-left: 1rem;
+        margin-bottom: 0.6rem;
+      }
+      main {
+        margin: 2rem 1rem 4rem 1rem;
+        padding: 1rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>شركة سوني</h1>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">من نحن</a>
+    <a href="satellite-internet.html">إنترنت فضائي</a>
+    <a href="ground-internet.html">إنترنت أرضي</a>
+    <a href="maintenance.html" aria-current="page">الصيانة والدعم</a>
+    <a href="cameras.html">تركيب كاميرات</a>
+    <a href="contact.html">اتصل بنا</a>
+  </nav>
+</header>
+
+<main>
+  <section aria-label="مقدمة الصيانة والدعم">
+    <h1>الصيانة والدعم الفني</h1>
+    <p>
+      في شركة سوني نؤمن بأهمية الدعم الفني والصيانة لضمان استمرارية خدمات الإنترنت والكاميرات بأعلى جودة وأقل انقطاع.
+      نقدم خدمات صيانة شاملة وتركيب احترافي مع استجابة سريعة لجميع طلبات الدعم.
+    </p>
+  </section><section aria-label="خدمات الدعم الفني">
+    <h2>خدمات الدعم الفني</h2>
+    <ul>
+      <li>تشخيص وحل مشاكل الإنترنت بسرعة وفعالية.</li>
+      <li>صيانة دورية لمنع الأعطال قبل حدوثها.</li>
+      <li>تحديث وتطوير الشبكات لضمان الأداء الأمثل.</li>
+      <li>توفير الدعم الفني عن بُعد وعبر الزيارة الميدانية.</li>
+      <li>تركيب وصيانة كاميرات المراقبة.</li>
+    </ul>
+  </section>
+
+  <section aria-label="كيفية التواصل">
+    <h2>كيفية التواصل معنا</h2>
+    <p>
+      نحن متواجدون لخدمتكم على مدار الساعة، لا تترددوا في الاتصال أو إرسال طلب دعم عبر القنوات التالية:
+    </p>
+    <div class="contact-info">
+      <p>📞 الهاتف: 0123456789</p>
+      <p>📧 البريد الإلكتروني: support@sony.com</p>
+      <p>🏢 العنوان: شارع التكنولوجيا، المدينة</p>
+    </div>
+    <a href="contact.html" class="btn-contact" role="button">تواصل معنا الآن</a>
+  </section>
+</main>
+
+<footer>
+  جميع الحقوق محفوظة © شركة سوني 2025
+</footer>
+
+</body>
+</html>

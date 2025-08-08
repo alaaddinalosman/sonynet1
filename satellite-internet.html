@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>إنترنت فضائي - شركة سوني</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Cairo', sans-serif;
+      background: #f8f9fa;
+      color: #212529;
+      direction: rtl;
+      scroll-behavior: smooth;
+    }
+    header {
+      position: sticky;
+      top: 0;
+      background: #003366;
+      color: #fff;
+      padding: 1rem 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+    }
+    header h1 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      letter-spacing: 2px;
+      cursor: pointer;
+      margin: 0;
+    }
+    nav a {
+      color: #fff;
+      margin-left: 2rem;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #ffcc00;
+      transition: width 0.3s ease;
+    }
+    nav a:hover {
+      color: #ffcc00;
+    }
+    nav a:hover::after {
+      width: 100%;
+    }
+    main {
+      max-width: 1000px;
+      margin: 3rem auto 5rem auto;
+      padding: 0 2rem;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      color: #003366;
+      margin-bottom: 1rem;
+    }
+    p {
+      line-height: 1.6;
+      font-size: 1.1rem;
+      color: #444;
+    }
+    section {
+      margin-bottom: 2.5rem;
+    }
+    ul {
+      list-style-type: disc;
+      padding-right: 1.5rem;
+      color: #555;
+      font-size: 1.1rem;
+    }
+    ul li {
+      margin-bottom: 0.7rem;
+    }
+    .pricing-table {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+    .price-card {
+      border: 2px solid #ffcc00;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      background: #fffbea;
+      box-shadow: 0 4px 15px rgba(255, 204, 0, 0.3);
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    .price-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 8px 25px rgba(255, 204, 0, 0.5);
+    }
+    .price-card h3 {
+      color: #003366;
+      font-size: 1.5rem;
+      margin-bottom: 0.7rem;
+    }
+    .price-card .price {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #ffcc00;
+      margin-bottom: 0.7rem;
+    }
+    .price-card ul {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1rem;
+    }
+    .price-card ul li {
+      margin: 0.4rem 0;
+      font-size: 1rem;
+      color: #555;
+    }
+    .btn-contact {
+      background-color: #003366;
+      color: white;
+      padding: 0.7rem 1.5rem;
+      border: none;
+      border-radius: 30px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+      margin: 2rem auto;
+      text-align: center;
+    }
+    .btn-contact:hover {
+      background-color: #002244;
+    }
+    footer {
+      background: #003366;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 1rem;
+      letter-spacing: 1.5px;
+      user-select: none;
+      margin-top: 3rem;
+    }
+    @media (max-width: 700px) {
+      header {
+        padding: 1rem 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+      nav a {
+        margin-left: 1rem;
+        margin-bottom: 0.5rem;
+      }
+      main {
+        margin: 2rem 1rem 4rem 1rem;
+        padding: 1rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body><header>
+  <h1>شركة سوني</h1>
+  <nav>
+    <a href="index.html">الرئيسية</a>
+    <a href="about.html">من نحن</a>
+    <a href="satellite-internet.html" aria-current="page">إنترنت فضائي</a>
+    <a href="ground-internet.html">إنترنت أرضي</a>
+    <a href="maintenance.html">الصيانة والدعم</a>
+    <a href="cameras.html">تركيب كاميرات</a>
+    <a href="contact.html">اتصل بنا</a>
+  </nav>
+</header>
+
+<main>
+  <section aria-label="مقدمة خدمة الإنترنت الفضائي">
+    <h1>خدمة الإنترنت الفضائي</h1>
+    <p>
+      تقدم شركة سوني خدمة الإنترنت الفضائي بسرعات عالية تغطي المناطق النائية والريفية التي يصعب وصول الإنترنت الارضي إليها.  
+      تعتمد الخدمة على أبراج متطورة توفر اتصالًا مستقرًا وموثوقًا لتلبية احتياجات الأفراد والشركات.
+    </p>
+  </section>
+
+  <section aria-label="مميزات خدمة الإنترنت الفضائي">
+    <h2>مميزات الخدمة</h2>
+    <ul>
+      <li>سرعات تصل إلى 100 ميغابت في الثانية</li>
+      <li>تغطية واسعة للمناطق الريفية والنائية</li>
+      <li>عدم الحاجة للبنية التحتية الأرضية أو الكابلات</li>
+      <li>دعم فني متواصل على مدار 24 ساعة</li>
+      <li>سهولة التركيب والاستخدام</li>
+    </ul>
+  </section>
+
+  <section aria-label="الأسعار">
+    <h2>الأسعار</h2>
+    <div class="pricing-table">
+      <div class="price-card">
+        <h3>باقة 2 ميغابت</h3>
+        <div class="price">10$ / شهريًا</div>
+        <ul>
+          <li>سرعة تحميل 2 ميغابت</li>
+          <li>دعم فني 24/7</li>
+          <li>تركيب مجاني</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <h3>باقة 5 ميغابت</h3>
+        <div class="price">20$ / شهريًا</div>
+        <ul>
+          <li>سرعة تحميل 5 ميغابت</li>
+          <li>دعم فني 24/7</li>
+          <li>تركيب مجاني</li>
+        </ul>
+      </div>
+      <div class="price-card">
+        <h3>باقة 8 ميغابت</h3>
+        <div class="price">25$ / شهريًا</div>
+        <ul>
+          <li>سرعة تحميل 8 ميغابت</li>
+          <li>دعم فني 24/7</li>
+          <li>تركيب مجاني</li>
+        </ul>
+</div>
+      <div class="price-card">
+        <h3>باقة 10 ميغابت</h3>
+        <div class="price">30$ / شهريًا</div>
+        <ul>
+          <li>سرعة تحميل 10 ميغابت</li>
+          <li>دعم فني 24/7</li>
+          <li>تركيب مجاني</li>
+        </ul></div>
+      <div class="price-card">
+        <h3>باقة 15 ميغابت</h3>
+        <div class="price">40$ / شهريًا</div>
+        <ul>
+          <li>سرعة تحميل 15 ميغابت</li>
+          <li>دعم فني 24/7</li>
+          <li>تركيب مجاني</li>
+        </ul></div>
+      <div class="price-card">
+        <h3>باقة 20 ميغابت</h3>
+        <div class="price">48$ / شهريًا</div>
+        <ul>
+          <li>سرعة تحميل 20 ميغابت</li>
+          <li>دعم فني 24/7</li>
+          <li>تركيب مجاني</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="الاتصال لطلب الخدمة" style="text-align:center; margin-top: 3rem;">
+    <a href="contact.html" class="btn-contact" role="button">اطلب الخدمة الآن</a>
+  </section>
+</main>
+
+<footer>
+  جميع الحقوق محفوظة © alaaddin saed alosman 2025
+</footer>
+
+</body>
+</html>
