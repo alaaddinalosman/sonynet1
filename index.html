@@ -3,9 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>سوني نت - تصميم جوال مختلف</title>
+  <title>سوني نت - تصميم جوال احترافي</title>
+
+  <!-- خط عربي راقي -->
+  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@700&display=swap" rel="stylesheet" />
+
+  <!-- مكتبة أيقونات Font Awesome -->
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Almarai:wght@700&display=swap');
     * {
       margin: 0;
       padding: 0;
@@ -13,82 +19,96 @@
     }
     body {
       font-family: 'Almarai', sans-serif;
-      background: #f0f2f5;
-      color: #2c3e50;
+      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+      color: #2f3e56;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      padding: 25px 15px;
+      padding: 30px 20px;
+      user-select: none;
     }
     header {
       text-align: center;
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 700;
-      color: #34495e;
-      margin-bottom: 35px;
-      letter-spacing: 3px;
-      border-bottom: 3px solid #2980b9;
-      padding-bottom: 8px;
+      color: #102a43;
+      letter-spacing: 2px;
+      margin-bottom: 40px;
+      text-shadow: 0 2px 6px rgba(16, 42, 67, 0.2);
     }
     nav {
-      background: white;
-      border-radius: 25px;
-      box-shadow: 0 12px 25px rgba(41, 128, 185, 0.2);
+      background: #ffffff;
+      border-radius: 30px;
+      box-shadow: 0 14px 40px rgba(16, 42, 67, 0.15);
       margin-bottom: 40px;
+      overflow: hidden;
     }
     nav ul {
       list-style: none;
       display: flex;
       flex-direction: column;
-      gap: 18px;
-      padding: 25px 15px;
+      gap: 20px;
+      padding: 30px 25px;
     }
     nav ul li a {
-      color: #2980b9;
-      text-decoration: none;
-      font-size: 1.3rem;
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      color: #334e68;
+      font-size: 1.35rem;
       font-weight: 700;
-      padding: 15px 20px;
-      border-radius: 50px;
-      background: #d6e9fb;
-      box-shadow: 0 6px 15px rgba(41, 128, 185, 0.3);
-      transition: background 0.3s ease, color 0.3s ease, transform 0.2s ease;
-      text-align: center;
-      display: block;
+      padding: 18px 22px;
+      border-radius: 25px;
+      background: #f9fbfd;
+      box-shadow: 0 6px 18px rgba(16, 42, 67, 0.1);
+      text-decoration: none;
+      transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+      user-select: none;
+    }
+    nav ul li a i {
+      font-size: 1.7rem;
+      color: #627d98;
+      transition: color 0.3s ease;
     }
     nav ul li a:hover,
     nav ul li a:focus {
-      background: #2980b9;
-      color: white;
+      background: #334e68;
+      color: #f0f4f8;
+      box-shadow: 0 10px 25px rgba(51, 78, 104, 0.6);
       transform: scale(1.05);
       outline: none;
-      box-shadow: 0 10px 25px rgba(41, 128, 185, 0.6);
-      cursor: pointer;
+    }
+    nav ul li a:hover i,
+    nav ul li a:focus i {
+      color: #f0f4f8;
     }
     main {
-      background: white;
-      border-radius: 25px;
-      padding: 30px 25px;
-      box-shadow: 0 15px 40px rgba(41, 128, 185, 0.1);
+      background: #ffffff;
+      border-radius: 35px;
+      padding: 40px 30px;
+      box-shadow: 0 20px 55px rgba(16, 42, 67, 0.12);
       text-align: center;
       flex-grow: 1;
-      color: #34495e;
+      color: #102a43;
+      user-select: none;
     }
     main h2 {
-      font-size: 2rem;
-      margin-bottom: 20px;
+      font-size: 2.4rem;
+      margin-bottom: 18px;
       font-weight: 700;
+      letter-spacing: 0.8px;
     }
     main p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      max-width: 340px;
+      font-size: 1.15rem;
+      line-height: 1.7;
+      max-width: 360px;
       margin: 0 auto;
+      color: #334e68;
     }
     footer {
-      margin-top: 40px;
-      font-size: 0.9rem;
-      color: #95a5a6;
+      margin-top: 45px;
+      font-size: 1rem;
+      color: #627d98;
       text-align: center;
       user-select: none;
     }
@@ -105,19 +125,19 @@
 
   <nav aria-label="القائمة الرئيسية">
     <ul>
-      <li><a href="index.html" tabindex="0">الرئيسية</a></li>
-      <li><a href="internet-satellite.html" tabindex="0">الإنترنت الفضائي</a></li>
-      <li><a href="internet-landline.html" tabindex="0">الإنترنت الأرضي</a></li>
-      <li><a href="maintenance.html" tabindex="0">الصيانة والدعم</a></li>
-      <li><a href="cameras.html" tabindex="0">تركيب الكاميرات</a></li>
-      <li><a href="contact.html" tabindex="0">اتصل بنا</a></li>
-      <li><a href="about.html" tabindex="0">من نحن</a></li>
+      <li><a href="index.html" tabindex="0"><i class="fas fa-home"></i>الرئيسية</a></li>
+      <li><a href="internet-satellite.html" tabindex="0"><i class="fas fa-satellite-dish"></i>الإنترنت الفضائي</a></li>
+      <li><a href="internet-landline.html" tabindex="0"><i class="fas fa-network-wired"></i>الإنترنت الأرضي</a></li>
+      <li><a href="maintenance.html" tabindex="0"><i class="fas fa-tools"></i>الصيانة والدعم</a></li>
+      <li><a href="cameras.html" tabindex="0"><i class="fas fa-video"></i>تركيب الكاميرات</a></li>
+      <li><a href="contact.html" tabindex="0"><i class="fas fa-phone-alt"></i>اتصل بنا</a></li>
+      <li><a href="about.html" tabindex="0"><i class="fas fa-info-circle"></i>من نحن</a></li>
     </ul>
   </nav>
 
   <main role="main">
-    <h2>مرحباً بكم في سوني نت</h2>
-    <p>نقدم أفضل خدمات الإنترنت الفضائي والأرضي مع دعم فني وتركيب كاميرات بجودة عالية وتصميم أنيق يلبي جميع احتياجاتكم.</p>
+    <h2>مرحبًا بكم في سوني نت</h2>
+    <p>نوفر خدمات إنترنت فضائي وأرضي عالية الجودة مع دعم فني وتركيب كاميرات محترف، ملتزمون بتقديم أفضل تجربة لعملائنا.</p>
   </main>
 
   <footer>
