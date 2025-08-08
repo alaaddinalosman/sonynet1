@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>مشترك ب سوني - تحقق من بياناتك</title>
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      direction: rtl;
+      background: #f0f4f8;
+      padding: 25px 20px;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      user-select: none;
+    }
+    h2 {
+      margin-bottom: 30px;
+      color: #2f3e50;
+      font-weight: 700;
+      font-size: 2rem;
+      text-align: center;
+    }
+    input {
+      padding: 15px 20px;
+      font-size: 1.1rem;
+      border-radius: 35px;
+      border: 2px solid #627d98;
+      width: 280px;
+      text-align: center;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+    input:focus {
+      border-color: #334e68;
+    }
+    button {
+      margin-top: 25px;
+      padding: 15px 40px;
+      font-size: 1.2rem;
+      background: linear-gradient(135deg, #334e68, #627d98);
+      color: white;
+      border: none;
+      border-radius: 35px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(51,78,104,0.4);
+      transition: background 0.3s ease;
+    }
+    button:hover {
+      background: linear-gradient(135deg, #1e2a38, #4a627f);
+    }
+    #result {
+      margin-top: 35px;
+      background: white;
+      width: 320px;
+      padding: 30px 20px;
+      border-radius: 30px;
+      box-shadow: 0 12px 30px rgba(16, 42, 67, 0.1);
+      color: #344050;
+      text-align: center;
+      font-size: 1.1rem;
+      min-height: 130px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>تحقق من بيانات مشترك سوني</h2>
+
+  <input type="text" id="usernameInput" placeholder="أدخل اسم المستخدم الخاص بك" autocomplete="off" />
+  <button onclick="checkSubscriber()">تحقق</button>
+
+  <div id="result"></div>
+
+  <script>
+    // بيانات المشتركين - مثال
+    const subscribers = [
+      {
+        username: "alaa123",
+        name: "علاء الدين عثمان",
+        package: "الإنترنت الفضائي - 50 ميجابت",
+        balanceDue: 120,
+        internetStatus: "لا يوجد عطل",
+      },
+      {
+        username: "sarah2025",
+        name: "سارة محمد",
+        package: "الإنترنت الأرضي - 100 ميجابت",
+        balanceDue: 0,
+        internetStatus: "انقطاع مؤقت في المنطقة",
+      },
+      {
+        username: "khalid01",
+        name: "خالد محمود",
+        package: "الإنترنت الفضائي - 20 ميجابت",
+        balanceDue: 45,
+        internetStatus: "تم إصلاح العطل",
+      },
+    ];
+
+    function checkSubscriber() {
+      const input = document.getElementById('usernameInput').value.trim().toLowerCase();
+      const resultDiv = document.getElementById('result');
+
+      if (!input) {
+        resultDiv.innerHTML = "<p style='color:red;'>يرجى إدخال اسم المستخدم.</p>";
+        return;
+      }
+
+      const subscriber = subscribers.find(sub => sub.username.toLowerCase() === input);
+
+      if (subscriber) {
+        resultDiv.innerHTML = 
+          <h3>مرحباً، ${subscriber.name}</h3>
+          <p><strong>الباقة:</strong> ${subscriber.package}</p>
+          <p><strong>المبلغ المتبقي للدفع:</strong> ${subscriber.balanceDue} ريال</p>
+          <p><strong>حالة الإنترنت:</strong> ${subscriber.internetStatus}</p>
+        ;
+      } else {
+        resultDiv.innerHTML = <p style='color:red;'>لم يتم العثور على اسم المستخدم.</p>;
+      }
+    }
+  </script>
+
+</body>
+</html>
