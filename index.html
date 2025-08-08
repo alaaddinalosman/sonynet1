@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>سوني نت - تصميم جوال مودرن</title>
+  <title>سوني نت - تصميم جوال مودرن مع أيقونات خاصة</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&display=swap" rel="stylesheet" />
 
@@ -42,8 +42,9 @@
     nav a {
       display: flex;
       align-items: center;
-      justify-content: center;
-      padding: 18px 0;
+      justify-content: flex-end;
+      gap: 15px;
+      padding: 18px 20px;
       border-radius: 30px;
       background: #e0e5ec;
       box-shadow:
@@ -70,37 +71,16 @@
       outline: none;
       cursor: pointer;
     }
-    nav a::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      transform: translateY(-50%);
-      left: 20px;
-      width: 24px;
-      height: 24px;
-      background-size: contain;
-      background-repeat: no-repeat;
-      filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.05));
+    nav a svg.icon {
+      width: 26px;
+      height: 26px;
+      fill: #344050;
+      transition: fill 0.3s ease;
+      flex-shrink: 0;
     }
-    nav a.home::before {
-      background-image: url('data:image/svg+xml;utf8,<svg fill="%23344050" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>');
-    }
-    nav a.satellite::before {
-      background-image: url('data:image/svg+xml;utf8,<svg fill="%23344050" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M20.94 4.34a9 9 0 00-11.54 11.54c-.4.75-1.43 1.88-2.5 2.75a.75.75 0 10.95 1.15 10.45 10.45 0 0016.85-16.85.75.75 0 10-1.15.95c-.88 1.07-2 2.11-2.75 2.5z"/></svg>');
-    }
-    nav a.landline::before {
-      background-image: url('data:image/svg+xml;utf8,<svg fill="%23344050" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 7v10h10V7H7zm2 2h6v6H9v-6z"/></svg>');
-    }
-    nav a.maintenance::before {
-      background-image: url('data:image/svg+xml;utf8,<svg fill="%23344050" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M21 16v-2a4 4 0 00-4-4h-1V6h-2v4H9v-4H7v4H6a4 4 0 00-4 4v2H0v2h24v-2h-3z"/></svg>');
-    }
-    nav a.cameras::before {
-      background-image: url('data:image/svg+xml;utf8,<svg fill="%23344050" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6z"/><path d="M21 6h-3.17l-1.83-2H8L6.17 6H3a1 1 0 00-1 1v10a1 1 0 001 1h18a1 1 0 001-1V7a1 1 0 00-1-1z"/></svg>');
-    }
-    nav a.contact::before {
-      background-image: url('data:image/svg+xml;utf8,<svg fill="%23344050" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M21 8V7l-9 6-4-3-8 5v2l8-5 4 3 11-7z"/></svg>');
-    }
-    nav a.about::before {background-image: url('data:image/svg+xml;utf8,<svg fill="%23344050" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke-width="2" stroke="#344050" fill="none"/><path d="M12 16v-4" stroke="#344050" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="8" r="1" fill="#344050"/></svg>');
+    nav a:hover svg.icon,
+    nav a:focus svg.icon {
+      fill: #1e2a38;
     }
     main {
       background: #e0e5ec;
@@ -148,13 +128,60 @@
   <header>سوني نت</header>
 
   <nav aria-label="القائمة الرئيسية">
-    <a href="index.html" class="home" tabindex="0">الرئيسية</a>
-    <a href="internet-satellite.html" class="satellite" tabindex="0">الإنترنت الفضائي</a>
-    <a href="internet-landline.html" class="landline" tabindex="0">الإنترنت الأرضي</a>
-    <a href="maintenance.html" class="maintenance" tabindex="0">الصيانة والدعم</a>
-    <a href="cameras.html" class="cameras" tabindex="0">تركيب الكاميرات</a>
-    <a href="contact.html" class="contact" tabindex="0">اتصل بنا</a>
-    <a href="about.html" class="about" tabindex="0">من نحن</a>
+    <a href="index.html" tabindex="0" class="home">
+      <span>الرئيسية</span>
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+      </svg>
+    </a>
+
+    <a href="internet-satellite.html" tabindex="0" class="satellite">
+      <span>الإنترنت الفضائي</span>
+      <!-- أيقونة صحن فضائي -->
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M12 2a10 10 0 0 0-8.485 15.657l1.414-1.414a8 8 0 1 1 11.314 0l1.414 1.414A10 10 0 0 0 12 2z"/>
+        <circle cx="12" cy="12" r="3"/>
+      </svg>
+    </a>
+
+    <a href="internet-landline.html" tabindex="0" class="landline">
+      <span>الإنترنت الأرضي</span>
+      <!-- أيقونة كبل ضوئي -->
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <rect x="4" y="10" width="16" height="4" rx="1.5" ry="1.5"/>
+        <path d="M7 10v-4a1 1 0 0 1 2 0v4"/>
+        <path d="M15 10v-4a1 1 0 0 0-2 0v4"/>
+      </svg>
+    </a><a href="maintenance.html" tabindex="0" class="maintenance">
+      <span>الصيانة والدعم</span>
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M21 16v-2a4 4 0 00-4-4h-1V6h-2v4H9v-4H7v4H6a4 4 0 00-4 4v2H0v2h24v-2h-3z"/>
+      </svg>
+    </a>
+
+    <a href="cameras.html" tabindex="0" class="cameras">
+      <span>تركيب الكاميرات</span>
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="5"/>
+        <path d="M21 6h-3.17l-1.83-2H8L6.17 6H3a1 1 0 00-1 1v10a1 1 0 001 1h18a1 1 0 001-1V7a1 1 0 00-1-1z"/>
+      </svg>
+    </a>
+
+    <a href="contact.html" tabindex="0" class="contact">
+      <span>اتصل بنا</span>
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <path d="M21 8V7l-9 6-4-3-8 5v2l8-5 4 3 11-7z"/>
+      </svg>
+    </a>
+
+    <a href="about.html" tabindex="0" class="about">
+      <span>من نحن</span>
+      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+        <circle cx="12" cy="12" r="10" stroke-width="2" stroke="#344050" fill="none"/>
+        <path d="M12 16v-4" stroke="#344050" stroke-width="2" stroke-linecap="round"/>
+        <circle cx="12" cy="8" r="1" fill="#344050"/>
+      </svg>
+    </a>
   </nav>
 
   <main role="main">
