@@ -3,114 +3,138 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>سوني نت - تصميم جوال احترافي</title>
+  <title>سوني نت - تصميم جوال مودرن</title>
 
-  <!-- خط عربي راقي -->
-  <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@700&display=swap" rel="stylesheet" />
-
-  <!-- مكتبة أيقونات Font Awesome -->
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&display=swap" rel="stylesheet" />
 
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
+      user-select: none;
     }
     body {
-      font-family: 'Almarai', sans-serif;
-      background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
-      color: #2f3e56;
+      font-family: 'Cairo', sans-serif;
+      background: #e0e5ec;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
-      padding: 30px 20px;
-      user-select: none;
+      justify-content: space-between;
+      padding: 25px 20px 80px;
+      color: #344050;
     }
     header {
-      text-align: center;
-      font-size: 3rem;
+      font-size: 2.8rem;
       font-weight: 700;
-      color: #102a43;
+      text-align: center;
+      margin-bottom: 35px;
+      color: #2f3e50;
       letter-spacing: 2px;
-      margin-bottom: 40px;
-      text-shadow: 0 2px 6px rgba(16, 42, 67, 0.2);
+      text-shadow: 1px 1px 3px rgba(255 255 255 / 0.9);
     }
     nav {
-      background: #ffffff;
-      border-radius: 30px;
-      box-shadow: 0 14px 40px rgba(16, 42, 67, 0.15);
-      margin-bottom: 40px;
-      overflow: hidden;
-    }
-    nav ul {
-      list-style: none;
       display: flex;
       flex-direction: column;
       gap: 20px;
-      padding: 30px 25px;
+      margin-bottom: 40px;
     }
-    nav ul li a {
+    nav a {
       display: flex;
       align-items: center;
-      gap: 15px;
-      color: #334e68;
+      justify-content: center;
+      padding: 18px 0;
+      border-radius: 30px;
+      background: #e0e5ec;
+      box-shadow:
+        6px 6px 10px #bec8d2,
+        -6px -6px 10px #ffffff;
       font-size: 1.35rem;
       font-weight: 700;
-      padding: 18px 22px;
-      border-radius: 25px;
-      background: #f9fbfd;
-      box-shadow: 0 6px 18px rgba(16, 42, 67, 0.1);
+      color: #344050;
       text-decoration: none;
-      transition: background 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+      transition:
+        box-shadow 0.3s ease,
+        transform 0.2s ease,
+        color 0.3s ease;
+      position: relative;
       user-select: none;
     }
-    nav ul li a i {
-      font-size: 1.7rem;
-      color: #627d98;
-      transition: color 0.3s ease;
-    }
-    nav ul li a:hover,
-    nav ul li a:focus {
-      background: #334e68;
-      color: #f0f4f8;
-      box-shadow: 0 10px 25px rgba(51, 78, 104, 0.6);
-      transform: scale(1.05);
+    nav a:hover,
+    nav a:focus {
+      box-shadow:
+        inset 6px 6px 8px #bec8d2,
+        inset -6px -6px 8px #ffffff;
+      color: #1e2a38;
+      transform: scale(1.04);
       outline: none;
+      cursor: pointer;
     }
-    nav ul li a:hover i,
-    nav ul li a:focus i {
-      color: #f0f4f8;
+    nav a::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 20px;
+      width: 24px;
+      height: 24px;
+      background-size: contain;
+      background-repeat: no-repeat;
+      filter: drop-shadow(1px 1px 1px rgba(0,0,0,0.05));
+    }
+    nav a.home::before {
+      background-image: url('data:image/svg+xml;utf8,<svg fill="%23344050" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>');
+    }
+    nav a.satellite::before {
+      background-image: url('data:image/svg+xml;utf8,<svg fill="%23344050" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M20.94 4.34a9 9 0 00-11.54 11.54c-.4.75-1.43 1.88-2.5 2.75a.75.75 0 10.95 1.15 10.45 10.45 0 0016.85-16.85.75.75 0 10-1.15.95c-.88 1.07-2 2.11-2.75 2.5z"/></svg>');
+    }
+    nav a.landline::before {
+      background-image: url('data:image/svg+xml;utf8,<svg fill="%23344050" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 7v10h10V7H7zm2 2h6v6H9v-6z"/></svg>');
+    }
+    nav a.maintenance::before {
+      background-image: url('data:image/svg+xml;utf8,<svg fill="%23344050" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M21 16v-2a4 4 0 00-4-4h-1V6h-2v4H9v-4H7v4H6a4 4 0 00-4 4v2H0v2h24v-2h-3z"/></svg>');
+    }
+    nav a.cameras::before {
+      background-image: url('data:image/svg+xml;utf8,<svg fill="%23344050" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 8a3 3 0 110-6 3 3 0 010 6z"/><path d="M21 6h-3.17l-1.83-2H8L6.17 6H3a1 1 0 00-1 1v10a1 1 0 001 1h18a1 1 0 001-1V7a1 1 0 00-1-1z"/></svg>');
+    }
+    nav a.contact::before {
+      background-image: url('data:image/svg+xml;utf8,<svg fill="%23344050" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M21 8V7l-9 6-4-3-8 5v2l8-5 4 3 11-7z"/></svg>');
+    }
+    nav a.about::before {background-image: url('data:image/svg+xml;utf8,<svg fill="%23344050" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><circle cx="12" cy="12" r="10" stroke-width="2" stroke="#344050" fill="none"/><path d="M12 16v-4" stroke="#344050" stroke-width="2" stroke-linecap="round"/><circle cx="12" cy="8" r="1" fill="#344050"/></svg>');
     }
     main {
-      background: #ffffff;
-      border-radius: 35px;
+      background: #e0e5ec;
+      border-radius: 40px;
       padding: 40px 30px;
-      box-shadow: 0 20px 55px rgba(16, 42, 67, 0.12);
+      box-shadow:
+        8px 8px 15px #bec8d2,
+        -8px -8px 15px #ffffff;
       text-align: center;
       flex-grow: 1;
-      color: #102a43;
+      color: #344050;
       user-select: none;
     }
     main h2 {
-      font-size: 2.4rem;
-      margin-bottom: 18px;
+      font-size: 2.6rem;
+      margin-bottom: 25px;
       font-weight: 700;
-      letter-spacing: 0.8px;
+      letter-spacing: 1px;
+      color: #2f3e50;
     }
     main p {
-      font-size: 1.15rem;
+      font-size: 1.2rem;
       line-height: 1.7;
       max-width: 360px;
       margin: 0 auto;
-      color: #334e68;
+      color: #556677;
     }
     footer {
-      margin-top: 45px;
-      font-size: 1rem;
-      color: #627d98;
+      margin-top: 50px;
       text-align: center;
+      font-size: 1rem;
+      color: #a0aec0;
       user-select: none;
+      letter-spacing: 1px;
     }
     /* إخفاء التصميم على الشاشات الكبيرة */
     @media (min-width: 600px) {
@@ -124,20 +148,18 @@
   <header>سوني نت</header>
 
   <nav aria-label="القائمة الرئيسية">
-    <ul>
-      <li><a href="index.html" tabindex="0"><i class="fas fa-home"></i>الرئيسية</a></li>
-      <li><a href="internet-satellite.html" tabindex="0"><i class="fas fa-satellite-dish"></i>الإنترنت الفضائي</a></li>
-      <li><a href="internet-landline.html" tabindex="0"><i class="fas fa-network-wired"></i>الإنترنت الأرضي</a></li>
-      <li><a href="maintenance.html" tabindex="0"><i class="fas fa-tools"></i>الصيانة والدعم</a></li>
-      <li><a href="cameras.html" tabindex="0"><i class="fas fa-video"></i>تركيب الكاميرات</a></li>
-      <li><a href="contact.html" tabindex="0"><i class="fas fa-phone-alt"></i>اتصل بنا</a></li>
-      <li><a href="about.html" tabindex="0"><i class="fas fa-info-circle"></i>من نحن</a></li>
-    </ul>
+    <a href="index.html" class="home" tabindex="0">الرئيسية</a>
+    <a href="internet-satellite.html" class="satellite" tabindex="0">الإنترنت الفضائي</a>
+    <a href="internet-landline.html" class="landline" tabindex="0">الإنترنت الأرضي</a>
+    <a href="maintenance.html" class="maintenance" tabindex="0">الصيانة والدعم</a>
+    <a href="cameras.html" class="cameras" tabindex="0">تركيب الكاميرات</a>
+    <a href="contact.html" class="contact" tabindex="0">اتصل بنا</a>
+    <a href="about.html" class="about" tabindex="0">من نحن</a>
   </nav>
 
   <main role="main">
-    <h2>مرحبًا بكم في سوني نت</h2>
-    <p>نوفر خدمات إنترنت فضائي وأرضي عالية الجودة مع دعم فني وتركيب كاميرات محترف، ملتزمون بتقديم أفضل تجربة لعملائنا.</p>
+    <h2>مرحبا بكم في سوني نت</h2>
+    <p>نوفر لكم أفضل خدمات الإنترنت الفضائي والأرضي مع دعم فني وتركيب كاميرات بجودة عالية وتصميم عصري متميز.</p>
   </main>
 
   <footer>
