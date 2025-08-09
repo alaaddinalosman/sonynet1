@@ -4,227 +4,178 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>اتصل بنا - سوني نت</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&display=swap" rel="stylesheet" />
   <style>
     * {
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box; user-select: none;
     }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      background: #f0f4ff;
-      color: #222;
-      line-height: 1.6;
-      direction: rtl;
+      font-family: 'Cairo', sans-serif;
+      background: #e0e5ec;
+      color: #344050;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
     }
     header {
-      background-color: #1a237e;
-      color: #fff;
-      padding: 25px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 1.8rem;
+      font-size: 3rem;
       font-weight: 700;
-      letter-spacing: 1.5px;
-      box-shadow: 0 3px 8px rgba(26,35,126,0.5);
+      margin-bottom: 25px;
+      color: #2f3e50;
+      text-shadow: 1px 1px 3px rgba(255,255,255,0.9);
     }
-    header h1 {
-      margin: 0;
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 35px;
     }
-    .back-button {
-      background: linear-gradient(135deg, #283593, #1a237e);
-      color: white;
-      padding: 10px 18px;
-      border-radius: 35px;
-      box-shadow: 0 4px 12px rgba(26,35,126,0.4);
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
+    nav a {
       display: flex;
       align-items: center;
-      gap: 8px;
-      transition: background 0.3s ease, box-shadow 0.3s ease;
-      user-select: none;
+      justify-content: flex-end;
+      gap: 10px;
+      padding: 16px;
+      border-radius: 30px;
+      background: #e0e5ec;
+      box-shadow: 6px 6px 10px #bec8d2, -6px -6px 10px #ffffff;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #344050;
+      text-decoration: none;
+      transition: 0.3s;
     }
-    .back-button:hover {
-      background: linear-gradient(135deg, #1a237e, #283593);
-      box-shadow: 0 6px 18px rgba(26,35,126,0.7);
+    nav a:hover {
+      box-shadow: inset 6px 6px 8px #bec8d2, inset -6px -6px 8px #ffffff;
+      color: #1e2a38;
+      transform: scale(1.03);
     }
-    .back-button svg {
-      width: 20px;
-      height: 20px;
-      fill: #fff;
-      transition: transform 0.3s ease;
+    nav a svg {
+      width: 28px; height: 28px; fill: #344050; transition: fill 0.3s;
     }
-    .back-button:hover svg {
-      transform: translateX(-5px);
+    nav a:hover svg {
+      fill: #1e2a38;
+    }
+    nav a[aria-current="page"] {
+      font-weight: 900;
+      color: #1e2a38;
+      box-shadow: inset 6px 6px 8px #bec8d2, inset -6px -6px 8px #ffffff;
+      pointer-events: none;
     }
     main {
-      max-width: 1000px;
-      margin: 40px auto;
-      padding: 0 20px;
-      display: flex;
-      gap: 40px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    .contact-form {
-      flex: 1 1 450px;
-      background: #fff;
-      padding: 30px 40px;
-      border-radius: 15px;
-      box-shadow: 0 6px 20px rgba(26,35,126,0.2);
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-    .contact-form label {
-      font-weight: 600;
-      margin-bottom: 8px;
-      display: block;
-      color: #1a237e;
-    }
-    .contact-form input,
-    .contact-form textarea {
       width: 100%;
-      padding: 14px 18px;
-      border: 2px solid #ccd6f6;
-      border-radius: 10px;
-      font-size: 1rem;
-      transition: border-color 0.3s ease;
-      font-family: inherit;
-      resize: vertical;
-    }
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      border-color: #1a237e;
-      outline: none;
-      box-shadow: 0 0 8px #283593aa;
-    }
-    .contact-form textarea {
-      min-height: 140px;
-    }
-    .contact-form button {
-      background: linear-gradient(135deg, #283593, #1a237e);
-      color: white;
-      border: none;
-      padding: 15px 0;
-      border-radius: 40px;
-      font-size: 1.2rem;
-      font-weight: 700;
-      cursor: pointer;
-      box-shadow: 0 5px 15px rgba(26,35,126,0.4);
-      transition: background 0.4s ease;
-      user-select: none;
-    }
-    .contact-form button:hover {
-      background: linear-gradient(135deg, #1a237e, #283593);
-      box-shadow: 0 8px 22px rgba(26,35,126,0.6);
-    }
-    .contact-info {
-      flex: 1 1 300px;
-      background: #1a237e;
-      color: white;
-      border-radius: 15px;
-      padding: 30px 25px;
-      box-shadow: 0 6px 20px rgba(26,35,126,0.3);
+      max-width: 400px;
+      background: #e0e5ec;
+      border-radius: 30px;
+      box-shadow: 8px 8px 15px #bec8d2, -8px -8px 15px #ffffff;
+      padding: 30px 20px;
+      text-align: center;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       gap: 25px;
     }
-    .contact-info h2 {
-      margin-top: 0;
-      font-weight: 700;
-      letter-spacing: 1px;
+    main h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      color: #2f3e50;
     }
-    .contact-info p {
-      font-size: 1.1rem;
-      line-height: 1.5;
+    .btn-group {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
     }
-    .contact-info .info-item {
+    .contact-btn {
       display: flex;
       align-items: center;
+      justify-content: center;
       gap: 12px;
-      font-size: 1.1rem;
+      padding: 15px;
+      border-radius: 30px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+      user-select: auto;
+      transition: background 0.3s, transform 0.2s;
     }
-    .contact-info .info-item svg {
+    .contact-btn:hover {
+      transform: scale(1.05);
+    }
+    .phone {
+      background: #28a745;
+      box-shadow: 0 5px 15px rgba(40,167,69,0.6);
+    }
+    .phone svg {
+      fill: white;
       width: 22px;
-      height: 22px;fill: #ffc107;
-      flex-shrink: 0;
+      height: 22px;
+    }
+    .whatsapp {
+      background: #25d366;
+      box-shadow: 0 5px 15px rgba(37,211,102,0.6);
+    }
+    .whatsapp svg {
+      fill: white;
+      width: 22px;
+      height: 22px;
+    }
+    .telegram {
+      background: #0088cc;
+      box-shadow: 0 5px 15px rgba(0,136,204,0.6);
+    }
+    .telegram svg {
+      fill: white;
+      width: 22px;
+      height: 22px;
     }
     footer {
-      background-color: #1a237e;
-      color: white;
-      text-align: center;
-      padding: 18px 10px;
-      margin-top: 50px;
-      font-weight: 600;
-      letter-spacing: 0.7px;
-      font-size: 1rem;
-      user-select: none;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #a0aec0;
     }
-    @media (max-width: 720px) {
-      main {
-        flex-direction: column;
-        max-width: 90%;
-      }
-      .contact-info, .contact-form {
-        flex: 1 1 100%;
+    @media (min-width: 600px) {
+      body > * {
+        display: none !important;
       }
     }
   </style>
 </head>
 <body>
+  <header>سوني نت</header>
+  <nav>
+    <a href="index.html">الرئيسية
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+    </a>
+    <a href="contact.html" aria-current="page">اتصل بنا
+      <svg viewBox="0 0 24 24">
+        <path d="M21 8V7l-3 2-2-1-7 5-3-2v8h18V8z"/>
+        <path d="M3 6h18v2H3z"/>
+      </svg>
+    </a>
+  </nav>
 
-<header>
-  <h1>اتصل بنا</h1>
-  <a href="index.html" class="back-button" aria-label="عودة إلى الصفحة الرئيسية">
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
-    </svg>
-    الرئيسية
-  </a>
-</header>
-
-<main>
-  <section class="contact-form" aria-label="نموذج الاتصال">
-    <form action="#" method="post">
-      <label for="name">الاسم الكامل</label>
-      <input type="text" id="name" name="name" placeholder="اكتب اسمك الكامل" required />
-
-      <label for="phone">رقم الهاتف</label>
-      <input type="tel" id="phone" name="phone" placeholder="09XXXXXXXX" pattern="[0-9]{10,15}" required />
-
-      <label for="message">رسالتك</label>
-      <textarea id="message" name="message" placeholder="اكتب رسالتك هنا..." required></textarea>
-
-      <button type="submit">إرسال</button>
-    </form>
-  </section>
-
-  <section class="contact-info" aria-label="معلومات الاتصال">
-    <h2>معلومات التواصل</h2>
-    <p>نحن في سوني نت سعداء بخدمتك! يمكنك التواصل معنا عبر الوسائل التالية:</p>
-    
-    <div class="info-item">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79a15.05 15.05 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21 11.36 11.36 0 003.55 1.12 1 1 0 01.89 1v3.42a1 1 0 01-1 1A16 16 0 013 6a1 1 0 011-1h3.42a1 1 0 011 .89 11.36 11.36 0 001.12 3.55 1 1 0 01-.21 1.11z"/></svg>
-      <span>هاتف: 0949289088</span>
+  <main>
+    <h2>تواصل معنا</h2>
+    <div class="btn-group">
+      <a href="tel:0949289088" class="contact-btn phone" aria-label="اتصل بنا">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M6.62 10.79a15.09 15.09 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1.11-.21 11.36 11.36 0 0 0 3.58.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A16 16 0 0 1 4 5a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.36 11.36 0 0 0 .57 3.58 1 1 0 0 1-.21 1.11z"/></svg>
+        اتصال مباشر
+      </a>
+      <a href="https://wa.me/00963949289088" target="_blank" class="contact-btn whatsapp" aria-label="واتساب">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.148-1.758-.867-2.03-.967-.273-.1-.472-.148-.67.148-.198.297-.767.966-.94 1.164-.173.198-.347.223-.644.074-.297-.148-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.52.149-.173.198-.297.297-.495.099-.198.05-.371-.025-.52-.075-.148-.67-1.611-.916-2.207-.242-.579-.487-.5-.67-.51-.173-.007-.371-.009-.57-.009-.198 0-.52.074-.792.371s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.148.198 2.095 3.2 5.077 4.487.709.306 1.26.489 1.69.625.71.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.247-.695.247-1.29.173-1.413-.074-.123-.27-.198-.567-.347z"/></svg>
+        واتساب
+      </a>
+      <a href="https://t.me/yourtelegram" target="_blank" class="contact-btn telegram" aria-label="تلجرام">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M22 3.008a1.5 1.5 0 0 0-1.865-1.416L2.1 9.7a1 1 0 0 0 .086 1.846l5.462 2.124 1.998 6.347a.6.6 0 0 0 1.068.08l3.287-4.825 4.512 3.342a1 1 0 0 0 1.697-.89L22 3.008z"/></svg>
+        تلجرام
+      </a>
     </div>
-    <div class="info-item">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1114.5 9 2.5 2.5 0 0112 11.5z"/></svg>
-      <span>العنوان: حلب، الجمهورية العربية السورية</span>
-    </div>
-    <div class="info-item">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 4H4a2 2 0 00-2 2v12a2 2 0 002 2h16a2 2 0 002-2V6a2 2 0 00-2-2zm0 4l-8 5-8-5V6l8 5 8-5z"/></svg>
-      <span>البريد الإلكتروني: info@sonynet.com</span>
-    </div>
-  </section>
-</main>
+  </main>
 
-<footer>
-  © 2025 سوني نت - جميع الحقوق محفوظة
-</footer>
-
+  <footer>© 2025 سوني نت - جميع الحقوق محفوظة</footer>
 </body>
 </html>
