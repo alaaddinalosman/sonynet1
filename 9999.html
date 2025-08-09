@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>أسعار الباقات - سوني نت</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box; user-select: none;
+    }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #e0e5ec;
+      color: #344050;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 10px;
+      min-height: 100vh;
+    }
+    header {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 30px;
+      color: #2f3e50;
+      text-shadow: 1px 1px 3px rgba(255,255,255,0.9);
+      user-select: auto;
+    }
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 35px;
+    }
+    nav a {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      padding: 16px;
+      border-radius: 30px;
+      background: #e0e5ec;
+      box-shadow: 6px 6px 10px #bec8d2, -6px -6px 10px #ffffff;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #344050;
+      text-decoration: none;
+      transition: 0.3s;
+      user-select: auto;
+    }
+    nav a:hover {
+      box-shadow: inset 6px 6px 8px #bec8d2, inset -6px -6px 8px #ffffff;
+      color: #1e2a38;
+      transform: scale(1.03);
+    }
+    nav a svg {
+      width: 28px; height: 28px; fill: #344050; transition: fill 0.3s;
+    }
+    nav a:hover svg {
+      fill: #1e2a38;
+    }
+    nav a[aria-current="page"] {
+      font-weight: 900;
+      color: #1e2a38;
+      box-shadow: inset 6px 6px 8px #bec8d2, inset -6px -6px 8px #ffffff;
+      pointer-events: none;
+    }
+    main {
+      width: 100%;
+      max-width: 900px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 30px;
+      padding: 10px;
+      user-select: auto;
+    }
+    .package {
+      background: #e0e5ec;
+      border-radius: 25px;
+      box-shadow: 8px 8px 15px #bec8d2, -8px -8px 15px #ffffff;
+      padding: 25px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+      cursor: default;
+    }
+    .package:hover {
+      transform: translateY(-10px);
+      box-shadow: 12px 12px 25px #a3adbb, -12px -12px 25px #ffffff;
+    }
+    .package h3 {
+      font-size: 1.8rem;
+      margin-bottom: 15px;
+      color: #2f3e50;
+      user-select: auto;
+    }
+    .package .price {
+      font-size: 2.4rem;
+      font-weight: 900;
+      margin-bottom: 15px;
+      color: #28a745;
+      user-select: auto;
+    }
+    .package p {
+      font-size: 1.1rem;
+      color: #556677;
+      line-height: 1.5;
+      user-select: auto;
+    }
+    footer {
+      margin-top: 50px;
+      font-size: 0.9rem;
+      color: #a0aec0;
+      user-select: auto;
+    }
+    @media (max-width: 900px) {
+      main {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    @media (max-width: 600px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>سوني نت</header>
+  <nav>
+    <a href="index.html">الرئيسية
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+    </a>
+    <a href="internet-satellite.html">الإنترنت الفضائي
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2a10 10 0 0 0-8.485 15.657l1.414-1.414a8 8 0 1 1 11.314 0l1.414 1.414A10 10 0 0 0 12 2z"/>
+        <circle cx="12" cy="12" r="3"/>
+      </svg>
+    </a>
+    <a href="internet-fiber.html">الإنترنت الأرضي
+      <svg viewBox="0 0 24 24">
+        <path d="M17.7 5.3L12 11l-5.7-5.7-1.4 1.4L12 14l7.1-7.1z"/>
+      </svg>
+    </a>
+    <a href="prices.html" aria-current="page">الأسعار
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zm0 5.5L4.6 7 12 10.5 19.4 7 12 7.5z"/>
+        <path d="M2 17l10 5 10-5"/>
+      </svg>
+    </a>
+  </nav><main>
+    <div class="package">
+      <h3>باقة Lite Beam</h3>
+      <div class="price">70 دولار</div>
+      <p>
+        صحن Lite Beam عالي الأداء يوفر اتصال سريع ومستقر لمناطق ذات تغطية متوسطة، مناسب للاستخدام المنزلي.
+      </p>
+    </div>
+    <div class="package">
+      <h3>باقة Lite Beam AC</h3>
+      <div class="price">80 دولار</div>
+      <p>
+        نسخة متطورة من Lite Beam مع دعم AC لتحسين السرعة والاتصال في الظروف الصعبة، مثالية للشركات الصغيرة.
+      </p>
+    </div>
+    <div class="package">
+      <h3>باقة Power Beam</h3>
+      <div class="price">100 دولار</div>
+      <p>
+        صحن Power Beam عالي القوة لتغطية نطاق واسع وسرعات فائقة، مناسب للمشاريع الكبيرة والمؤسسات.
+      </p>
+    </div>
+  </main>
+
+  <footer>© 2025 سوني نت - جميع الحقوق محفوظة</footer>
+</body>
+</html>
