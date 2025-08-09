@@ -21,7 +21,7 @@
       font-weight: 700;
       margin-bottom: 25px;
       color: #2f3e50;
-      text-shadow: 1px 1px 3px rgba(255 255 255 / 0.9);
+      text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.9);
     }
     nav {
       display: flex;
@@ -58,7 +58,6 @@
       transition: fill 0.3s;
     }
     nav a:hover svg { fill: #1e2a38; }
-
     main {
       width: 100%;
       max-width: 400px;
@@ -108,36 +107,32 @@
 <body>
   <header>سوني نت</header>
   <nav>
-    <a href="index.html">
-      <span>الرئيسية</span>
-      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
-    </a>
-    <a href="internet-satellite.html">
-      <span>الإنترنت الفضائي</span>
-      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.485 15.657l1.414-1.414a8 8 0 1 1 11.314 0l1.414 1.414A10 10 0 0 0 12 2z"/><circle cx="12" cy="12" r="3"/></svg>
-    </a>
+    <a href="index.html"><span>الرئيسية</span><svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg></a>
+    <a href="internet-satellite.html" aria-current="page"><span>الإنترنت الفضائي</span><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.485 15.657l1.414-1.414a8 8 0 1 1 11.314 0l1.414 1.414A10 10 0 0 0 12 2z"/><circle cx="12" cy="12" r="3"/></svg></a>
   </nav>
 
   <main>
     <div class="card">
-           <h3>صحن LiteBeam AC</h3>
-        <div class="price">80 $</div>
-        <p>تصميم خفيف ويتميز بثبات ممتاز مع دعم setup من الهاتف عبر Wi-Fi وإضاءة تأثيري متدرج.</p>
+      <div class="info">
+        <h3>صحن LiteBeam</h3>
+        <div class="price">70 $</div>
+        <p>خفيف وسهل التركيب للاستخدام المنزلي بسرعات ثابتة وتغطية مناسبة.</p>
       </div>
     </div>
 
     <div class="card">
-      <">
       <div class="info">
-        <h3>صحن LiteBeam</h3>
-        <div class="price">70 $</div>
-        <p>مثالي للمنازل والمواقع الصغيرة بسرعة ثابتة وتثبيت سهل دون حاجة لأدوات خاصة.</p>
+        <h3>صحن LiteBeam AC</h3>
+        <div class="price">80 $</div>
+        <p>أداء أقوى مع دعم Wi-Fi مدمج لسهولة الإعداد وتغطية محسنة.</p>
       </div>
-    </div><div class="card">
+    </div>
+
+    <div class="card">
       <div class="info">
         <h3>صحن PowerBeam</h3>
         <div class="price">100 $</div>
-        <p>مناسب للمسافات الطويلة والتغطية القوية؛ تصميم صلب يوفر ثبات عالٍ في الظروف الجوية.</p>
+        <p>مثالي للمسافات الطويلة مع تصميم قوي وثبات فائق في الظروف الجوية.</p>
       </div>
     </div>
   </main>
