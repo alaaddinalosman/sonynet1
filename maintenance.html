@@ -3,199 +3,156 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>الصيانة والدعم - شركة سوني</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo&display=swap" rel="stylesheet" />
+  <title>الصيانة والدعم - سوني نت</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&display=swap" rel="stylesheet" />
   <style>
     * {
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
+      user-select: none;
     }
     body {
-      margin: 0;
       font-family: 'Cairo', sans-serif;
-      background: #f4f7f9;
-      color: #222;
-      direction: rtl;
-      scroll-behavior: smooth;
+      background: #e0e5ec;
+      color: #344050;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
     }
     header {
-      position: sticky;
-      top: 0;
-      background: #002d5f;
-      color: #fff;
-      padding: 1rem 3rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      box-shadow: 0 2px 12px rgba(0,0,0,0.25);
-      z-index: 1000;
-    }
-    header h1 {
+      font-size: 3rem;
       font-weight: 700;
-      font-size: 1.9rem;
-      letter-spacing: 2px;
-      margin: 0;
-      cursor: pointer;
+      margin-bottom: 25px;
+      color: #2f3e50;
+      text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.9);
+    }
+    nav {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 100%;
+      max-width: 400px;
+      margin-bottom: 35px;
     }
     nav a {
-      color: #fff;
-      margin-left: 2rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 10px;
+      padding: 16px;
+      border-radius: 30px;
+      background: #e0e5ec;
+      box-shadow: 6px 6px 10px #bec8d2, -6px -6px 10px #ffffff;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #344050;
       text-decoration: none;
-      font-weight: 600;
-      font-size: 1rem;
-      position: relative;
-      transition: color 0.3s ease;
-    }
-    nav a::after {
-      content: '';
-      position: absolute;
-      width: 0;
-      height: 2px;
-      bottom: -5px;
-      left: 0;
-      background-color: #f8c444;
-      transition: width 0.3s ease;
+      transition: 0.3s;
     }
     nav a:hover {
-      color: #f8c444;
+      box-shadow: inset 6px 6px 8px #bec8d2, inset -6px -6px 8px #ffffff;
+      color: #1e2a38;
+      transform: scale(1.03);
     }
-    nav a:hover::after {
-      width: 100%;
+    nav a svg {
+      width: 28px;
+      height: 28px;
+      fill: #344050;
+      transition: fill 0.3s;
+    }
+    nav a:hover svg {
+      fill: #1e2a38;
+    }
+    nav a[aria-current="page"] {
+      font-weight: 900;
+      color: #1e2a38;
+      box-shadow: inset 6px 6px 8px #bec8d2, inset -6px -6px 8px #ffffff;
+      pointer-events: none;
     }
     main {
-      max-width: 980px;
-      margin: 3rem auto 5rem auto;
-      padding: 0 2rem;
-      background: #fff;
-      border-radius: 14px;
-      box-shadow: 0 8px 22px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 400px;
+      background: #e0e5ec;
+      border-radius: 30px;
+      box-shadow: 8px 8px 15px #bec8d2, -8px -8px 15px #ffffff;
+      padding: 20px;
+      text-align: center;
     }
-    h1, h2 {
-      color: #002d5f;
-      margin-bottom: 1.1rem;
+    main h2 {
+      font-size: 2rem;
+      margin-bottom: 15px;
+      color: #2f3e50;
     }
-    p {
+    main p {
       font-size: 1.1rem;
       line-height: 1.6;
-      color: #444;
-      margin-bottom: 1.5rem;
+      color: #556677;
+      margin-bottom: 20px;
     }
-    section {
-      margin-bottom: 3rem;
-    }
-    ul {
-      list-style-type: square;
-      padding-right: 1.6rem;
-      color: #555;
-      font-size: 1.1rem;
-    }
-    ul li {
-      margin-bottom: 0.85rem;
-    }
-    .contact-info {
-      background: #e6f0ff;
-      border: 2px solid #002d5f;
-      padding: 1.8rem;
-      border-radius: 12px;
-      font-size: 1.1rem;
-      color: #002d5f;
-      text-align: center;
-      margin-top: 2rem;
-    }
-    .btn-contact {
+    .contact-btn {
       display: inline-block;
-      background-color: #002d5f;
-      color: #fff;
-      padding: 0.75rem 1.7rem;
+      padding: 15px 30px;
+      background: #28a745;
+      color: white;
       font-weight: 700;
-      font-size: 1.15rem;
       border-radius: 30px;
-      border: none;
-      cursor: pointer;
       text-decoration: none;
-      margin-top: 2rem;
-      transition: background-color 0.3s ease;
-      user-select: none;
+      font-size: 1.2rem;
+      box-shadow: 0 5px 15px rgba(40, 167, 69, 0.5);
+      transition: background 0.3s, transform 0.2s;
+      user-select: auto;
     }
-    .btn-contact:hover {
-      background-color: #001b3a;
+    .contact-btn:hover {
+      background: #218838;
+      transform: scale(1.05);
     }
     footer {
-      background: #002d5f;
-      color: white;
-      text-align: center;
-      padding: 1.7rem;
-      font-size: 1rem;
-      letter-spacing: 1.6px;
-      user-select: none;
-      margin-top: 3rem;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      color: #a0aec0;
     }
-    @media (max-width: 700px) {
-      header {
-        padding: 1rem 1rem;
-        flex-wrap: wrap;
-        justify-content: center;
-      }
-      nav a {
-        margin-left: 1rem;
-        margin-bottom: 0.6rem;
-      }
-      main {
-        margin: 2rem 1rem 4rem 1rem;
-        padding: 1rem 1rem;
+    @media (min-width: 600px) {
+      body > * {
+        display: none !important;
       }
     }
   </style>
 </head>
 <body>
-
-<header>
-  <h1>شركة سوني</h1>
+  <header>سوني نت</header>
   <nav>
-    <a href="index.html">الرئيسية</a>
-    <a href="about.html">من نحن</a>
-    <a href="satellite-internet.html">إنترنت فضائي</a>
-    <a href="ground-internet.html">إنترنت أرضي</a>
-    <a href="maintenance.html" aria-current="page">الصيانة والدعم</a>
-    <a href="cameras.html">تركيب كاميرات</a>
-    <a href="contact.html">اتصل بنا</a>
+    <a href="index.html">الرئيسية
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
+    </a>
+    <a href="internet-satellite.html">الإنترنت الفضائي
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2a10 10 0 0 0-8.485 15.657l1.414-1.414a8 8 0 1 1 11.314 0l1.414 1.414A10 10 0 0 0 12 2z"/>
+        <circle cx="12" cy="12" r="3"/>
+      </svg>
+    </a>
+    <a href="internet-fiber.html">الإنترنت الأرضي
+      <svg viewBox="0 0 24 24">
+        <path d="M17.7 5.3L12 11l-5.7-5.7-1.4 1.4L12 14l7.1-7.1z"/>
+      </svg>
+    </a>
+    <a href="maintenance.html" aria-current="page">الصيانة والدعم
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2a9.93 9.93 0 0 0-7.07 2.93A9.93 9.93 0 0 0 2 12a9.93 9.93 0 0 0 2.93 7.07A9.93 9.93 0 0 0 12 22a9.93 9.93 0 0 0 7.07-2.93A9.93 9.93 0 0 0 22 12a9.93 9.93 0 0 0-2.93-7.07A9.93 9.93 0 0 0 12 2Zm0 18a7.93 7.93 0 0 1-5.65-2.35 7.93 7.93 0 0 1-2.35-5.65 7.93 7.93 0 0 1 2.35-5.65A7.93 7.93 0 0 1 12 4a7.93 7.93 0 0 1 5.65 2.35 7.93 7.93 0 0 1 2.35 5.65 7.93 7.93 0 0 1-2.35 5.65A7.93 7.93 0 0 1 12 20Z"/><path d="M11 6h2v6h-2zM11 14h2v2h-2z"/>
+      </svg>
+    </a>
   </nav>
-</header>
 
-<main>
-  <section aria-label="مقدمة الصيانة والدعم">
-    <h1>الصيانة والدعم الفني</h1>
-    <p>
-      في شركة سوني نؤمن بأهمية الدعم الفني والصيانة لضمان استمرارية خدمات الإنترنت والكاميرات بأعلى جودة وأقل انقطاع.
-      نقدم خدمات صيانة شاملة وتركيب احترافي مع استجابة سريعة لجميع طلبات الدعم.
-    </p>
-  </section><section aria-label="خدمات الدعم الفني">
-    <h2>خدمات الدعم الفني</h2>
-    <ul>
-      <li>تشخيص وحل مشاكل الإنترنت بسرعة وفعالية.</li>
-      <li>صيانة دورية لمنع الأعطال قبل حدوثها.</li>
-      <li>تحديث وتطوير الشبكات لضمان الأداء الأمثل.</li>
-      <li>توفير الدعم الفني عن بُعد وعبر الزيارة الميدانية.</li>
-      <li>تركيب وصيانة كاميرات المراقبة.</li>
-    </ul>
-  </section>
+  <main>
+    <h2>الصيانة والدعم الفني</h2>
+    <p>نحن هنا لخدمتكم على مدار الساعة لتقديم أفضل خدمات الصيانة والدعم الفني لشبكة الإنترنت والكاميرات.  
+    فريقنا المدرب جاهز لحل أي مشكلة تواجهكم بسرعة واحترافية.</p>
+    <p>يمكنك الاتصال بنا على الرقم التالي أو إرسال استفسارك عبر زر الاستفسار أدناه.</p>
 
-  <section aria-label="كيفية التواصل">
-    <h2>كيفية التواصل معنا</h2>
-    <p>
-      نحن متواجدون لخدمتكم على مدار الساعة، لا تترددوا في الاتصال أو إرسال طلب دعم عبر القنوات التالية:
-    </p>
-    <div class="contact-info">
-      <p>📞 الهاتف: 0123456789</p>
-      <p>📧 البريد الإلكتروني: support@sony.com</p>
-      <p>🏢 العنوان: شارع التكنولوجيا، المدينة</p>
-    </div>
-    <a href="contact.html" class="btn-contact" role="button">تواصل معنا الآن</a>
-  </section>
-</main>
+    <a href="tel:+1234567890" class="contact-btn">اتصل بنا الآن</a>
+  </main>
 
-<footer>
-  جميع الحقوق محفوظة © شركة سوني 2025
-</footer>
-
+  <footer>© 2025 سوني نت - جميع الحقوق محفوظة</footer>
 </body>
 </html>
