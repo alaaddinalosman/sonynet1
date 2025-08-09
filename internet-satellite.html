@@ -1,270 +1,151 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <title>الإنترنت الفضائي - سوني نت</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&display=swap" rel="stylesheet"/>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      user-select: none;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; user-select: none; }
     body {
       font-family: 'Cairo', sans-serif;
       background: #e0e5ec;
-      min-height: 100vh;
       color: #344050;
-      padding: 25px 20px 80px;
       display: flex;
       flex-direction: column;
       align-items: center;
+      padding: 20px;
     }
     header {
       font-size: 3rem;
       font-weight: 700;
+      margin-bottom: 25px;
       color: #2f3e50;
-      letter-spacing: 3px;
-      margin-bottom: 40px;
       text-shadow: 1px 1px 3px rgba(255 255 255 / 0.9);
-      user-select: none;
     }
     nav {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 15px;
       width: 100%;
-      max-width: 440px;
-      margin-bottom: 50px;
+      max-width: 400px;
+      margin-bottom: 35px;
     }
     nav a {
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      gap: 15px;
-      padding: 18px 25px;
-      border-radius: 35px;
+      gap: 10px;
+      padding: 16px;
+      border-radius: 30px;
       background: #e0e5ec;
-      box-shadow:
-        8px 8px 15px #bec8d2,
-        -8px -8px 15px #ffffff;
-      font-size: 1.4rem;
+      box-shadow: 6px 6px 10px #bec8d2, -6px -6px 10px #ffffff;
+      font-size: 1.3rem;
       font-weight: 700;
       color: #344050;
       text-decoration: none;
-      transition:
-        box-shadow 0.3s ease,
-        transform 0.2s ease,
-        color 0.3s ease;
-      user-select: none;
+      transition: 0.3s;
     }
-    nav a:hover,
-    nav a:focus {
-      box-shadow:
-        inset 6px 6px 8px #bec8d2,
-        inset -6px -6px 8px #ffffff;
+    nav a:hover {
+      box-shadow: inset 6px 6px 8px #bec8d2, inset -6px -6px 8px #ffffff;
       color: #1e2a38;
-      transform: scale(1.05);
-      outline: none;
-      cursor: pointer;
+      transform: scale(1.03);
     }
-    nav a svg.icon {
-      width: 30px;
-      height: 30px;
+    nav a svg {
+      width: 28px;
+      height: 28px;
       fill: #344050;
-      transition: fill 0.3s ease;
-      flex-shrink: 0;
+      transition: fill 0.3s;
     }
-    nav a:hover svg.icon,
-    nav a:focus svg.icon {
-      fill: #1e2a38;
-    }
+    nav a:hover svg { fill: #1e2a38; }
+
     main {
+      width: 100%;
+      max-width: 400px;
+    }
+    .card {
       background: #e0e5ec;
-      border-radius: 50px;
-      padding: 40px 35px;
-      box-shadow:
-        10px 10px 20px #bec8d2,
-        -10px -10px 20px #ffffff;
-      max-width: 480px;
-      width: 100%;
-      color: #344050;
-      user-select: none;
-    }
-    main h2 {
-      font-size: 2.8rem;
+      border-radius: 30px;
+      box-shadow: 8px 8px 15px #bec8d2, -8px -8px 15px #ffffff;
       margin-bottom: 25px;
-      font-weight: 700;
-      letter-spacing: 2px;
-      color: #2f3e50;
-      text-align: center;
-    }
-    main p {
-      font-size: 1.3rem;
-      line-height: 1.8;
-      color: #556677;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-    section {
-      margin-bottom: 35px;
-    }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      box-shadow:
-        4px 4px 10px #bec8d2,
-        -4px -4px 10px #ffffff;
-      border-radius: 20px;
       overflow: hidden;
-      user-select: none;
+      transition: transform 0.3s;
     }
-    th, td {
-      padding: 14px 18px;
+    .card:hover { transform: scale(1.02); }
+    .card img {
+      width: 100%;
+      display: block;
+    }
+    .info {
+      padding: 18px;
       text-align: center;
-      font-size: 1.2rem;
-      border-bottom: 1px solid #c8d1db;
-      color: #344050;
     }
-    th {
-      background: #f0f3f7;
-      font-weight: 700;
-      letter-spacing: 1.5px;
+    .info h3 {
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+      color: #2f3e50;
     }
-    tbody tr:last-child td {
-      border-bottom: none;
+    .info .price {
+      font-size: 1.4rem;
+      color: #28a745;
+      margin-bottom: 8px;
+    }
+    .info p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #556677;
     }
     footer {
-      margin-top: 60px;
-      text-align: center;
-      font-size: 1rem;
+      margin-top: 40px;
+      font-size: 0.9rem;
       color: #a0aec0;
-      letter-spacing: 1.5px;
-      user-select: none;
     }
-    /* تصميم الجوال فقط */
     @media (min-width: 600px) {
-      body > * {
-        display: none !important;
-      }
+      body > * { display: none !important; }
     }
   </style>
 </head>
 <body>
   <header>سوني نت</header>
-
-  <nav aria-label="القائمة الرئيسية">
-    <a href="index.html" tabindex="0" class="home">
+  <nav>
+    <a href="index.html">
       <span>الرئيسية</span>
-      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
-      </svg>
+      <svg viewBox="0 0 24 24"><path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/></svg>
     </a>
-    <a href="internet-satellite.html" tabindex="0" class="satellite" aria-current="page"><span>الإنترنت الفضائي</span>
-      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M12 2a10 10 0 0 0-8.485 15.657l1.414-1.414a8 8 0 1 1 11.314 0l1.414 1.414A10 10 0 0 0 12 2z"/>
-        <circle cx="12" cy="12" r="3"/>
-      </svg>
-    </a>
-    <a href="internet-landline.html" tabindex="0" class="landline">
-      <span>الإنترنت الأرضي</span>
-      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <rect x="4" y="10" width="16" height="4" rx="1.5" ry="1.5"/>
-        <path d="M7 10v-4a1 1 0 0 1 2 0v4"/>
-        <path d="M15 10v-4a1 1 0 0 0-2 0v4"/>
-      </svg>
-    </a>
-    <a href="maintenance.html" tabindex="0" class="maintenance">
-      <span>الصيانة والدعم</span>
-      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <path d="M21 16v-2a4 4 0 00-4-4h-1V6h-2v4H9v-4H7v4H6a4 4 0 00-4 4v2H0v2h24v-2h-3z"/>
-      </svg>
-    </a>
-    <a href="cameras.html" tabindex="0" class="cameras">
-      <span>تركيب الكاميرات</span>
-      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <circle cx="12" cy="12" r="5"/>
-        <path d="M21 6h-3.17l-1.83-2H8L6.17 6H3a1 1 0 00-1 1v10a1 1 0 001 1h18a1 1 0 001-1V7a1 1 0 00-1-1z"/>
-      </svg>
-    </a>
-    <a href="subscriber.html" tabindex="0" class="subscriber">
-      <span>مشترك ب سوني</span>
-      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-        <circle cx="12" cy="12" r="10" stroke-width="2" stroke="#344050" fill="none"/>
-        <path d="M12 16v-4" stroke="#344050" stroke-width="2" stroke-linecap="round"/>
-        <circle cx="12" cy="8" r="1" fill="#344050"/>
-      </svg>
+    <a href="internet-satellite.html">
+      <span>الإنترنت الفضائي</span>
+      <svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.485 15.657l1.414-1.414a8 8 0 1 1 11.314 0l1.414 1.414A10 10 0 0 0 12 2z"/><circle cx="12" cy="12" r="3"/></svg>
     </a>
   </nav>
 
-  <main role="main">
-    <h2>الإنترنت الفضائي من سوني نت</h2>
-    <p>استمتع باتصال إنترنت عالي السرعة مع تغطية شاملة للمناطق النائية والصعبة الوصول.</p>
+  <main>
+    <div class="card">
+      <!-- استخدم i رابط الصورة من carousel-->
+      <img src="https://www.pngegg.com/file/ebgovt" alt="LiteBeam AC">
+      <div class="info">
+        <h3>صحن LiteBeam AC</h3>
+        <div class="price">80 $</div>
+        <p>تصميم خفيف ويتميز بثبات ممتاز مع دعم setup من الهاتف عبر Wi-Fi وإضاءة تأثيري متدرج.</p>
+      </div>
+    </div>
 
-    <section aria-labelledby="packages-title">
-      <h3 id="packages-title" style="text-align:center; margin-bottom:20px; font-size:1.8rem; color:#2f3e50; font-weight:700;">أسعار الباقات</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>الباقة</th>
-            <th>السرعة (ميجابت/ثانية)</th>
-            <th>السعر الشهري (بالدولار)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>باقة البداية</td><td>10</td><td>30$</td></tr>
-          <tr><td>باقة المتوسط</td><td>25</td><td>50$</td></tr>
-          <tr><td>باقة المتقدم</td><td>50</td><td>80$</td></tr>
-          <tr><td>باقة الأعمال</td><td>100</td><td>150$</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section aria-labelledby="router-title">
-      <h3 id="router-title" style="text-align:center; margin:30px 0 20px; font-size:1.8rem; color:#2f3e50; font-weight:700;">أسعار الراوترات</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>النوع</th>
-            <th>السعر (بالدولار)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>راوتر أساسي</td><td>70$</td></tr>
-          <tr><td>راوتر متقدم مع مدي مسافة أكبر</td><td>120$</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section aria-labelledby="dish-title">
-      <h3 id="dish-title" style="text-align:center; margin:30px 0 20px; font-size:1.8rem; color:#2f3e50; font-weight:700;">أسعار الصحون الفضائية</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>نوع الصحن</th>
-            <th>السعر (بالدولار)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>صحن قياسي 60 سم</td><td>50$</td></tr>
-          <tr><td>صحن عالي الجودة 90 سم</td><td>90$</td></tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section aria-labelledby="details-title">
-      <h3 id="details-title" style="text-align:center; margin:30px 0 20px; font-size:1.8rem; color:#2f3e50; font-weight:700;">تفاصيل خدمة الإنترنت الفضائي</h3><p>
-        يتم توفير الإنترنت الفضائي عبر أقمار صناعية حديثة تضمن سرعة اتصال مستقرة وجودة عالية حتى في المناطق النائية التي يصعب تغطيتها بالإنترنت التقليدي.  
-        تركيب الأجهزة سهل ويتم بواسطة فريق فني متخصص مع ضمان الصيانة والدعم الفني المستمر.  
-        السرعات والباقات مرنة لتتناسب مع احتياجات الأفراد والشركات.
-      </p>
-    </section>
+    <div class="card">
+      <img src="https://images.openai.com/thumbnails/url/HEjBuXicu1mUUVJSUGylr5-al1xUWVCSmqJbkpRnoJdeXJJYkpmsl5yfq5-Zm5ieWmxfaAuUsXL0S7F0Tw6KdzdL9Ak1yArIzPd188vPcA4wKnKJ8PF2yws2NzNy9veMdM_yCfQvySqqskhOTHSzLMl3C0msiqpQKwYAq6ko6g" alt="LiteBeam">
+      <div class="info">
+        <h3>صحن LiteBeam</h3>
+        <div class="price">70 $</div>
+        <p>مثالي للمنازل والمواقع الصغيرة بسرعة ثابتة وتثبيت سهل دون حاجة لأدوات خاصة.</p>
+      </div>
+    </div><div class="card">
+      <img src="https://images.openai.com/thumbnails/url/1uyRifp3H3gnncpUEk7jMxAelN_QI1KWrmkImy0UBkqFLo0xhKDT6Xn6SnOZ0XCa1dcX9w_zItJzyLKqQSB6rwkW0X1_i3mF-8o2bU6rjLXyctP_O3HZAiW4sAb58Nzs-GU" alt="PowerBeam">
+      <div class="info">
+        <h3>صحن PowerBeam</h3>
+        <div class="price">100 $</div>
+        <p>مناسب للمسافات الطويلة والتغطية القوية؛ تصميم صلب يوفر ثبات عالٍ في الظروف الجوية.</p>
+      </div>
+    </div>
   </main>
 
-  <footer>
-    © 2025 سوني نت - جميع الحقوق محفوظة
-  </footer>
+  <footer>© 2025 سوني نت - جميع الحقوق محفوظة</footer>
 </body>
 </html>
