@@ -1,44 +1,127 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-<meta charset="UTF-8" />
-<title>اختبار</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>مشترك بس سوني - تسجيل الدخول</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;700&display=swap" rel="stylesheet" />
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box; user-select: none;
+    }
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: #e0e5ec;
+      color: #344050;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      padding: 20px;
+    }
+    main {
+      background: #e0e5ec;
+      padding: 40px 30px;
+      border-radius: 30px;
+      box-shadow: 8px 8px 15px #bec8d2, -8px -8px 15px #ffffff;
+      max-width: 400px;
+      width: 100%;
+      text-align: center;
+    }
+    main h2 {
+      margin-bottom: 30px;
+      font-size: 2.2rem;
+      color: #2f3e50;
+      user-select: auto;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    input[type="text"],
+    input[type="password"] {
+      padding: 15px 20px;
+      border-radius: 30px;
+      border: none;
+      box-shadow: inset 6px 6px 8px #bec8d2, inset -6px -6px 8px #ffffff;
+      font-size: 1.1rem;
+      font-family: 'Cairo', sans-serif;
+      outline: none;
+      transition: box-shadow 0.3s;
+      user-select: auto;
+    }
+    input[type="text"]:focus,
+    input[type="password"]:focus {
+      box-shadow: inset 4px 4px 6px #a0aec0, inset -4px -4px 6px #f0f4f8;
+    }
+    button {
+      padding: 15px;
+      background: #28a745;
+      color: white;
+      font-weight: 700;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(40, 167, 69, 0.6);
+      transition: background 0.3s, transform 0.2s;
+      user-select: auto;
+    }
+    button:hover {
+      background: #218838;
+      transform: scale(1.05);
+    }
+    .error-msg {
+      color: #d93025;
+      font-weight: 700;
+      font-size: 1rem;
+      display: none;
+      user-select: auto;
+    }
+    footer {
+      margin-top: 30px;
+      font-size: 0.9rem;
+      color: #a0aec0;
+      user-select: auto;
+    }
+  </style>
 </head>
 <body>
-  <input type="text" id="usernameInput" placeholder="أدخل اسم المستخدم" />
-  <button onclick="checkSubscriber()">تحقق</button>
-  <div id="result"></div>
+  <main>
+    <h2>تسجيل دخول مشترك سوني</h2>
+    <form id="loginForm" autocomplete="off">
+      <input type="text" id="username" name="username" placeholder="اسم المستخدم" required autocomplete="username" />
+      <input type="password" id="password" name="password" placeholder="كلمة المرور" required autocomplete="current-password" />
+      <div class="error-msg" id="errorMsg">اسم المستخدم أو كلمة المرور غير صحيحة.</div>
+      <button type="submit">تسجيل الدخول</button>
+    </form>
+  </main>
+  <footer>© 2025 سوني نت - جميع الحقوق محفوظة</footer>
 
   <script>
-    const subscribers = [
-      { username: "alaa123", name: "علاء الدين عثمان", package: "الإنترنت الفضائي", balanceDue: 120, internetStatus: "لا يوجد عطل" },
-      { username: "sarah2025", name: "سارة محمد", package: "الإنترنت الأرضي", balanceDue: 0, internetStatus: "انقطاع مؤقت" },
-      { username: "khalid01", name: "خالد محمود", package: "الإنترنت الفضائي", balanceDue: 45, internetStatus: "تم إصلاح العطل" }
-    ];
+    const form = document.getElementById('loginForm');
+    const errorMsg = document.getElementById('errorMsg');
 
-    function checkSubscriber() {
-      alert("تم الضغط على زر التحقق");
-      const input = document.getElementById('usernameInput').value.trim().toLowerCase();
-      const resultDiv = document.getElementById('result');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const username = form.username.value.trim();
+      const password = form.password.value.trim();
 
-      if (!input) {
-        resultDiv.innerHTML = "<p style='color:red;'>يرجى إدخال اسم المستخدم.</p>";
+      // مؤقتاً فقط عرض خطأ، لأن القاعدة غير مفعلة بعد
+      // لاحقاً ستربطها بقاعدة بيانات بالخادم
+      if (username === "" || password === "") {
+        errorMsg.textContent = "يرجى تعبئة جميع الحقول.";
+        errorMsg.style.display = "block";
         return;
       }
 
-      const subscriber = subscribers.find(sub => sub.username.toLowerCase() === input);
-
-      if (subscriber) {
-        resultDiv.innerHTML = 
-          <h3>مرحباً، ${subscriber.name}</h3>
-          <p>الباقة: ${subscriber.package}</p>
-          <p>المبلغ المتبقي: ${subscriber.balanceDue} ريال</p>
-          <p>حالة الإنترنت: ${subscriber.internetStatus}</p>
-        ;
-      } else {
-        resultDiv.innerHTML = "<p style='color:red;'>لم يتم العثور على اسم المستخدم.</p>";
-      }
-    }
+      // هنا تضع كود التحقق من البيانات مع قاعدة البيانات لاحقاً
+      // الآن فقط إظهار رسالة خطأ وهمية
+      errorMsg.textContent = "اسم المستخدم أو كلمة المرور غير صحيحة.";
+      errorMsg.style.display = "block";
+    });
   </script>
 </body>
 </html>
